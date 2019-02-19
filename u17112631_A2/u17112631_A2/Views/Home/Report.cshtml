@@ -1,0 +1,23 @@
+﻿@using u17112631_A2.ViewModels
+@model Report
+@using System.Globalization
+@using System.Data
+
+
+@{
+    ViewBag.Title = "Report";
+}
+
+<h1>Report</h1>
+<hr />
+<h3>Select Dates </h3>
+@using (Html.BeginForm("Report", "Home", FormMethod.Post))
+{
+    <label> From: </label>
+            @Html.TextBoxFor(m => m.fromDate, "yyyy-MM-dd", new { @Value = String.Format("{0:yyyy-MM-dd}", Model.fromDate), @type = "date", @class = "formMethod-control" })
+
+    <label> To: </label>
+            @Html.TextBoxFor(m => m.toDate, "yyyy-MM-dd", new { @Value = String.Format("{0:yyyy-MM-dd}", Model.toDate), @type = "date", @class = "formMethod-control" })
+
+    <input type= "submit" value="Create report"/>  
+}
