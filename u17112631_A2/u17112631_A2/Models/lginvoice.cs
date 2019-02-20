@@ -14,21 +14,10 @@ namespace u17112631_A2.Models
     
     public partial class lginvoice
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public lginvoice()
-        {
-            this.lglines = new HashSet<lgline>();
-        }
-    
         public decimal inv_num { get; set; }
         public Nullable<System.DateTime> inv_DATETIME { get; set; }
         public Nullable<decimal> cust_code { get; set; }
         public Nullable<decimal> inv_total { get; set; }
         public Nullable<decimal> employee_id { get; set; }
-    
-        public virtual lgcustomer lgcustomer { get; set; }
-        public virtual lgemployee lgemployee { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<lgline> lglines { get; set; }
     }
 }

@@ -14,12 +14,6 @@ namespace u17112631_A2.Models
     
     public partial class lgcustomer
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public lgcustomer()
-        {
-            this.lginvoices = new HashSet<lginvoice>();
-        }
-    
         public decimal cust_code { get; set; }
         public string cust_fname { get; set; }
         public string cust_lname { get; set; }
@@ -28,8 +22,5 @@ namespace u17112631_A2.Models
         public string cust_state { get; set; }
         public string cust_zip { get; set; }
         public Nullable<decimal> cust_balance { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<lginvoice> lginvoices { get; set; }
     }
 }

@@ -12,9 +12,10 @@ namespace u17112631_A2.ViewModels
         public decimal number { get; set; }
         public decimal totalSalaryExpense { get; set; }
         public List<Employee> employees;
-        public HardwareDBEntities db;
+        public HardwareDBEntities1 db;
+       
 
-        public Department(string name_,decimal num_, HardwareDBEntities db_)
+        public Department(string name_,decimal num_, HardwareDBEntities1 db_)
         {
             name = name_;
             number = num_;

@@ -21,3 +21,16 @@
 
     <input type= "submit" value="Create report"/>  
 }
+
+
+    @foreach(var department in Model.departments)
+    {
+        <h1>@department.name</h1>
+        <hr />
+        <h4>Total salary Expense:R @department.totalSalaryExpense</h4>
+        <h4>Total employees: @department.employees.Count</h4>
+
+        
+        <button onclick="showDeptEmp()">Show employee Details </button>
+        
+     }

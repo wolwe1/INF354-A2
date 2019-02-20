@@ -14,13 +14,6 @@ namespace u17112631_A2.Models
     
     public partial class lgproduct
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public lgproduct()
-        {
-            this.lglines = new HashSet<lgline>();
-            this.lgvendors = new HashSet<lgvendor>();
-        }
-    
         public string prod_sku { get; set; }
         public string prod_descript { get; set; }
         public string prod_type { get; set; }
@@ -30,11 +23,5 @@ namespace u17112631_A2.Models
         public Nullable<decimal> prod_qoh { get; set; }
         public Nullable<decimal> prod_min { get; set; }
         public Nullable<decimal> brand_id { get; set; }
-    
-        public virtual lgbrand lgbrand { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<lgline> lglines { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<lgvendor> lgvendors { get; set; }
     }
 }

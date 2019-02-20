@@ -19,8 +19,5 @@ namespace u17112631_A2.Models
         public string prod_sku { get; set; }
         public Nullable<decimal> line_qty { get; set; }
         public Nullable<decimal> line_price { get; set; }
-    
-        public virtual lginvoice lginvoice { get; set; }
-        public virtual lgproduct lgproduct { get; set; }
     }
 }

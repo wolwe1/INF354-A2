@@ -9,7 +9,7 @@ namespace u17112631_A2.ViewModels
     
     public class Employee
     {
-        HardwareDBEntities db;
+        HardwareDBEntities1 db;
         public decimal employeeNumber { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
@@ -18,7 +18,7 @@ namespace u17112631_A2.ViewModels
         public decimal totalSalaryReceived;
         public List<lgsalary_history> myPayCheques;
 
-        public Employee(HardwareDBEntities db_,decimal empNum,string name_,string surname_,string title_)
+        public Employee(HardwareDBEntities1 db_,decimal empNum,string name_,string surname_,string title_)
         {
             db = db_;
             employeeNumber = empNum;

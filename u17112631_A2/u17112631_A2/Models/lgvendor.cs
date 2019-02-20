@@ -14,20 +14,11 @@ namespace u17112631_A2.Models
     
     public partial class lgvendor
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public lgvendor()
-        {
-            this.lgproducts = new HashSet<lgproduct>();
-        }
-    
         public decimal vend_id { get; set; }
         public string vend_name { get; set; }
         public string vend_street { get; set; }
         public string vend_city { get; set; }
         public string vend_state { get; set; }
         public string vend_zip { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<lgproduct> lgproducts { get; set; }
     }
 }

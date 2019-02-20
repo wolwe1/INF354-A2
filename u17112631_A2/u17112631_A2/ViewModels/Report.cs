@@ -10,7 +10,7 @@ namespace u17112631_A2.ViewModels
         public DateTime fromDate { get; set; }
         public DateTime toDate { get; set; }
 
-        List<Department> departments;
+        public List<Department> departments;
 
         public Report()
         {

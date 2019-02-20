@@ -28,7 +28,7 @@ namespace u17112631_A2.Controllers
         public ActionResult Report(Report r)
         {
             // Do the report things
-            using (HardwareDBEntities db = new HardwareDBEntities())
+            using (HardwareDBEntities1 db = new HardwareDBEntities1())
             {
                 db.Configuration.ProxyCreationEnabled = false;
                 var departmentsList = db.lgdepartments.ToList();
