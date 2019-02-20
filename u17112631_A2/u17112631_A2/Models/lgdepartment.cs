@@ -29,5 +29,7 @@ namespace u17112631_A2.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<lgemployee> lgemployees { get; set; }
         public virtual lgemployee lgemployee { get; set; }
+
+       
     }
 }

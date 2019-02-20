@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using u17112631_A2.ViewModels;
+using u17112631_A2.Models;
 
 namespace u17112631_A2.Controllers
 {
@@ -27,8 +28,21 @@ namespace u17112631_A2.Controllers
         public ActionResult Report(Report r)
         {
             // Do the report things
+            using (HardwareDBEntities db = new HardwareDBEntities())
+            {
+                db.Configuration.ProxyCreationEnabled = false;
+                var departmentsList = db.lgdepartments.ToList();
+                List<Department> departments = new List<Department>();
 
-            return View(newReport);
+                foreach (var department in departmentsList)
+                {
+                    Department newDep = new Department(department.dept_name, department.dept_num, db);
+                    departments.Add(newDep);
+                }
+
+                r.setDepartments(departments);
+                return View(r);
+            }
         }
 
 
