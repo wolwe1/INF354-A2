@@ -22,15 +22,35 @@
     <input type= "submit" value="Create report"/>  
 }
 
+@if (Model.departments != null) //Chart
+{
+    Model.updateDept();
+    <img src="@Url.Action("EmployeeSalariesChart", "Home")" />
 
-    @foreach(var department in Model.departments)
+    foreach (var department in Model.departments)
     {
         <h1>@department.name</h1>
         <hr />
         <h4>Total salary Expense:R @department.totalSalaryExpense</h4>
         <h4>Total employees: @department.employees.Count</h4>
 
-        
         <button onclick="showDeptEmp()">Show employee Details </button>
-        
-     }
+        <div id="@department.name"></div>
+    }
+}
+
+<script>
+    function showDeptEmp(name) {
+        @foreach(var dept in Model.departments)
+        {
+            foreach(var emp in dept.employees)
+            {
+                @:var employee = document.createElement("p");
+                @:employee.innerHTML = @emp.name + " R:" + @emp.getSalaryBetween(Model.fromDate, Model.toDate);
+               @:document.getElementById(name).appendChild(employee);
+            }
+        }
+    }
+</script>
+
+    

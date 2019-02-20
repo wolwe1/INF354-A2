@@ -12,15 +12,13 @@ namespace u17112631_A2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class lgline
+    public partial class lgsalary_history
     {
-        public decimal inv_num { get; set; }
-        public decimal line_num { get; set; }
-        public string prod_sku { get; set; }
-        public Nullable<decimal> line_qty { get; set; }
-        public Nullable<decimal> line_price { get; set; }
+        public decimal emp_num { get; set; }
+        public System.DateTime sal_from { get; set; }
+        public System.DateTime sal_end { get; set; }
+        public Nullable<decimal> sal_amount { get; set; }
     
-        public virtual lginvoice lginvoice { get; set; }
-        public virtual lgproduct lgproduct { get; set; }
+        public virtual lgemployee lgemployee { get; set; }
     }
 }

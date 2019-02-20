@@ -1,0 +1,18 @@
+﻿@model Dictionary<string, double>
+
+@{
+    Layout = null;
+}
+
+@{
+    if(Model != null){
+        var deptChart = new Chart(width: 400, height: 250)
+        .AddTitle("Total salary payout")
+        .AddSeries(
+            name: "Department",
+            xValue: Model.Keys,
+            yValues: Model.Values)
+        .Write();
+    }
+    
+}

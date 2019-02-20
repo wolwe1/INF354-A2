@@ -12,10 +12,10 @@ namespace u17112631_A2.ViewModels
         public decimal number { get; set; }
         public decimal totalSalaryExpense { get; set; }
         public List<Employee> employees;
-        public HardwareDBEntities1 db;
+        public HardwareDBEntities2 db;
        
 
-        public Department(string name_,decimal num_, HardwareDBEntities1 db_)
+        public Department(string name_,decimal num_, HardwareDBEntities2 db_)
         {
             name = name_;
             number = num_;
@@ -40,6 +40,17 @@ namespace u17112631_A2.ViewModels
         public int getEmployeeCount()
         {
             return employees.Count;
+        }
+
+        public decimal getTotalDeptSalariesBetween(DateTime fromDate,DateTime toDate)
+        {
+            decimal totalSal = 0;
+            foreach(Employee emp in employees)
+            {
+                totalSal += emp.getSalaryBetween(fromDate, toDate);
+            }
+            totalSalaryExpense = totalSal;
+            return totalSal;
         }
     }
 }

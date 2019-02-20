@@ -14,6 +14,14 @@ namespace u17112631_A2.Models
     
     public partial class lgemployee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public lgemployee()
+        {
+            this.lgdepartments = new HashSet<lgdepartment>();
+            this.lginvoices = new HashSet<lginvoice>();
+            this.lgsalary_history = new HashSet<lgsalary_history>();
+        }
+    
         public decimal emp_num { get; set; }
         public string emp_fname { get; set; }
         public string emp_lname { get; set; }
@@ -23,5 +31,13 @@ namespace u17112631_A2.Models
         public string emp_title { get; set; }
         public Nullable<decimal> emp_comm { get; set; }
         public Nullable<decimal> dept_num { get; set; }
+    
+        public virtual lgdepartment lgdepartment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<lgdepartment> lgdepartments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<lginvoice> lginvoices { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<lgsalary_history> lgsalary_history { get; set; }
     }
 }

@@ -220,7 +220,7 @@
     <End Role="lgproduct" Type="Self.lgproduct" Multiplicity="*" />
     <End Role="lgvendor" Type="Self.lgvendor" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="HardwareDBEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="HardwareDBEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="lgbrands" EntityType="Self.lgbrand" />
     <EntitySet Name="lgcustomers" EntityType="Self.lgcustomer" />
     <EntitySet Name="lgdepartments" EntityType="Self.lgdepartment" />

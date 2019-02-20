@@ -13,10 +13,10 @@ namespace u17112631_A2.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HardwareDBEntities1 : DbContext
+    public partial class HardwareDBEntities2 : DbContext
     {
-        public HardwareDBEntities1()
-            : base("name=HardwareDBEntities1")
+        public HardwareDBEntities2()
+            : base("name=HardwareDBEntities2")
         {
         }
     
@@ -25,13 +25,14 @@ namespace u17112631_A2.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<lgbrand> lgbrands { get; set; }
         public virtual DbSet<lgcustomer> lgcustomers { get; set; }
         public virtual DbSet<lgdepartment> lgdepartments { get; set; }
         public virtual DbSet<lgemployee> lgemployees { get; set; }
         public virtual DbSet<lginvoice> lginvoices { get; set; }
         public virtual DbSet<lgline> lglines { get; set; }
         public virtual DbSet<lgproduct> lgproducts { get; set; }
-        public virtual DbSet<lgsupply> lgsupplies { get; set; }
+        public virtual DbSet<lgsalary_history> lgsalary_history { get; set; }
         public virtual DbSet<lgvendor> lgvendors { get; set; }
     }
 }
